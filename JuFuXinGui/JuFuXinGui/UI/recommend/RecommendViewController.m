@@ -34,7 +34,24 @@
 {
     [super viewDidLoad];
     [self initBtn];
+    [self initShareBtn];
     [self initScrollView];
+}
+
+-(void)initShareBtn{
+    
+    UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(300, 20, 44, 44);
+    shareBtn.backgroundColor = [UIColor purpleColor];
+    [shareBtn addTarget:self action:@selector(shareBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    shareItem.width = 100;
+    self.navigationItem.rightBarButtonItem = shareItem;
+}
+
+-(void)shareBtnPress{
+
+
 }
 
 -(void)initBtn{
