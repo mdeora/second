@@ -59,7 +59,6 @@
     
     self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 64, 320, 150) animationDuration:2];
     self.mainScorllView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0];
-    
     self.mainScorllView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
         return viewsArray[pageIndex];
     };

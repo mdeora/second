@@ -52,6 +52,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
         self.autoresizesSubviews = YES;
         self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         self.scrollView.autoresizingMask = 0xFF;
@@ -60,8 +61,18 @@
         self.scrollView.delegate = self;
         self.scrollView.contentOffset = CGPointMake(CGRectGetWidth(self.scrollView.frame), 0);
         self.scrollView.pagingEnabled = YES;
+        self.scrollView.showsVerticalScrollIndicator = NO;
+        self.scrollView.showsHorizontalScrollIndicator = NO;
+        
+        self.pageControl = [[UIPageControl alloc] init];
+        self.pageControl.frame = CGRectMake(0,100, 320, 50);
+        self.pageControl.backgroundColor = [UIColor clearColor];
+        self.pageControl.numberOfPages = 5;
+        
         [self addSubview:self.scrollView];
+        [self addSubview:self.pageControl];
         self.currentPageIndex = 0;
+        self.pageControl.currentPage = self.currentPageIndex;
     }
     return self;
 }
@@ -136,12 +147,14 @@
     int contentOffsetX = scrollView.contentOffset.x;
     if(contentOffsetX >= (2 * CGRectGetWidth(scrollView.frame))) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex + 1];
-        NSLog(@"next，当前页:%d",self.currentPageIndex);
+        NSLog(@"next，当前页:%ld",self.currentPageIndex);
+        self.pageControl.currentPage = self.currentPageIndex;
         [self configContentViews];
     }
     if(contentOffsetX <= 0) {
         self.currentPageIndex = [self getValidNextPageIndexWithPageIndex:self.currentPageIndex - 1];
-        NSLog(@"previous，当前页:%d",self.currentPageIndex);
+        NSLog(@"previous，当前页:%ld",self.currentPageIndex);
+        self.pageControl.currentPage = self.currentPageIndex;
         [self configContentViews];
     }
 }
@@ -167,13 +180,5 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
