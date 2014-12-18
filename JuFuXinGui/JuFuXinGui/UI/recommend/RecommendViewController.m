@@ -39,7 +39,7 @@
 
 -(void)initBtn{
 
-    UIButton * button = [[UIButton alloc]initWithFrame:self.view.frame];
+    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(50, 300, 50, 50)];
     [button setTitle:@"点击" forState:UIControlStateNormal];
     button.backgroundColor = [UIColor purpleColor];
     [button addTarget:self action:@selector(goOtherView:) forControlEvents:UIControlEventTouchUpInside];
