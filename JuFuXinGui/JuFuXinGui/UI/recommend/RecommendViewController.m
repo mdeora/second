@@ -29,7 +29,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.delegate isHiddenCustomTabBarByBoolean:NO];
+    [self.mainScorllView.animationTimer resumeTimer];
+    [[NTViewController sharedController] hidesTabBar:NO animated:NO];
 }
 
 - (void)viewDidLoad
@@ -118,8 +119,12 @@
 - (void)goOtherView:(UIButton *)sender{
     
     NextViewController * fifth = [[NextViewController alloc]init];
-    [self.delegate isHiddenCustomTabBarByBoolean:YES];
     [self.navigationController pushViewController:fifth animated:YES];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.mainScorllView.animationTimer pauseTimer];
 }
 
 - (void)didReceiveMemoryWarning

@@ -73,7 +73,7 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.12471192389999999" green="0.06176334268" blue="0.90709918479999996" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="statusLabel" destination="bqA-Iw-zeV" id="jw9-HF-9LX"/>
             </connections>

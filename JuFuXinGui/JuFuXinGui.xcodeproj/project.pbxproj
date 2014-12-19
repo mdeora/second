@@ -11,6 +11,7 @@
 		A8166F0D1A43C77800A34A5B /* InvestmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8166F0B1A43C77800A34A5B /* InvestmentCell.xib */; };
 		A8166F131A43D88F00A34A5B /* AboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8166F111A43D88F00A34A5B /* AboutUsCell.m */; };
 		A8166F141A43D88F00A34A5B /* AboutUsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8166F121A43D88F00A34A5B /* AboutUsCell.xib */; };
+		A8166F171A44002800A34A5B /* InvestDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8166F161A44002800A34A5B /* InvestDetailController.m */; };
 		A82CA55B1A4137720083884B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA55A1A4137720083884B /* main.m */; };
 		A82CA55E1A4137720083884B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA55D1A4137720083884B /* AppDelegate.m */; };
 		A82CA5641A4137720083884B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5621A4137720083884B /* Main.storyboard */; };
@@ -95,6 +96,8 @@
 		A8166F101A43D88F00A34A5B /* AboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsCell.h; path = UI/aboutUs/AboutUsCell.h; sourceTree = "<group>"; };
 		A8166F111A43D88F00A34A5B /* AboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsCell.m; path = UI/aboutUs/AboutUsCell.m; sourceTree = "<group>"; };
 		A8166F121A43D88F00A34A5B /* AboutUsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutUsCell.xib; path = UI/aboutUs/AboutUsCell.xib; sourceTree = "<group>"; };
+		A8166F151A44002800A34A5B /* InvestDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvestDetailController.h; path = UI/Investment/InvestDetailController.h; sourceTree = "<group>"; };
+		A8166F161A44002800A34A5B /* InvestDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvestDetailController.m; path = UI/Investment/InvestDetailController.m; sourceTree = "<group>"; };
 		A82CA5551A4137720083884B /* JuFuXinGui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JuFuXinGui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82CA5591A4137720083884B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A82CA55A1A4137720083884B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				A8166F091A43C77800A34A5B /* InvestmentCell.h */,
 				A8166F0A1A43C77800A34A5B /* InvestmentCell.m */,
 				A8166F0B1A43C77800A34A5B /* InvestmentCell.xib */,
+				A8166F151A44002800A34A5B /* InvestDetailController.h */,
+				A8166F161A44002800A34A5B /* InvestDetailController.m */,
 			);
 			name = Investment;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				A8166F131A43D88F00A34A5B /* AboutUsCell.m in Sources */,
 				A8460C4C1A42A51E00530050 /* CycleScrollView.m in Sources */,
 				A82CA5D01A415FA60083884B /* AboutUsViewController.m in Sources */,
+				A8166F171A44002800A34A5B /* InvestDetailController.m in Sources */,
 				A82CA5C61A415F920083884B /* InvestmentViewController.m in Sources */,
 				A82CA5D41A4163280083884B /* NextViewController.m in Sources */,
 				A82CA5DB1A4169C50083884B /* NTButton.m in Sources */,

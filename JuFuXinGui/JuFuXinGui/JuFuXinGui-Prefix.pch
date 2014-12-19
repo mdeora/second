@@ -19,5 +19,6 @@
     #import <ShareSDK/ShareSDK.h>
 
     #import "Macro.h"
+    #import "NTViewController.h"
 
 #endif

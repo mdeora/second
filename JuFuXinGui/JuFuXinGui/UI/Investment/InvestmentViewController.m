@@ -8,6 +8,7 @@
 
 #import "InvestmentViewController.h"
 #import "InvestmentCell.h"
+#import "InvestDetailController.h"
 
 static NSString *identifier = @"cell";
 @interface InvestmentViewController ()
@@ -16,10 +17,14 @@ static NSString *identifier = @"cell";
 
 @implementation InvestmentViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NTViewController sharedController] hidesTabBar:NO animated:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"投资项目";
-    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self initShareBtn];
     [self initTableView];
@@ -69,6 +74,12 @@ static NSString *identifier = @"cell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 80;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    InvestDetailController *idc = [[InvestDetailController alloc] init];
+    [self.navigationController pushViewController:idc animated:YES];
 }
 
 

@@ -12,7 +12,6 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
     self.statusLabel.frame = CGRectMake(VIEW_WEIGHT-20, 4, 20, 33);
 }
 

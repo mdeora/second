@@ -13,9 +13,11 @@
 #import "UserCenterController.h"
 #import "AboutUsViewController.h"
 
+#define kTabBarHeight 49
+static NTViewController *controller = nil;
 @interface NTViewController (){
 
-    UIImageView *_tabBarView;//自定义的覆盖原先的tarbar的控件
+    UIView *_tabBarView;//自定义的覆盖原先的tarbar的控件
     
     NTButton * _previousBtn;//记录前一次选中的按钮
 
@@ -36,25 +38,42 @@
     return self;
 }
 
+//单例
++(NTViewController *)sharedController{
+    @synchronized(self){
+        if(controller == nil){
+            controller = [[self alloc] init];
+        }
+    }
+    return controller;
+}
+
++(instancetype)allocWithZone:(NSZone *)zone{
+    @synchronized(self){
+        if (controller == nil) {
+            controller = [super allocWithZone:zone];
+            return  controller;
+        }
+    }
+    return nil;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self initTabbar];
-    
 }
 
 -(void)initTabbar{
     self.tabBar.hidden = YES;
     CGFloat tabBarViewY = self.view.frame.size.height - 49;
     
-    _tabBarView = [[UIImageView alloc]initWithFrame:CGRectMake(0, tabBarViewY, VIEW_WEIGHT, 49)];
+    _tabBarView = [[UIView alloc]initWithFrame:CGRectMake(0, tabBarViewY, VIEW_WEIGHT, 49)];
     _tabBarView.userInteractionEnabled = YES;
-    //    _tabBarView.image = [UIImage imageNamed:@"title_background.png"];
     _tabBarView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:_tabBarView];
     
     RecommendViewController * first = [[RecommendViewController alloc]init];
-    first.delegate = self;
     UINavigationController * navi1 = [[UINavigationController alloc]initWithRootViewController:first];
     InvestmentViewController * second = [[InvestmentViewController alloc]init];
     UINavigationController * navi2 = [[UINavigationController alloc]initWithRootViewController:second];
@@ -71,7 +90,6 @@
     [self creatButtonWithNormalName:@"tabbar_more" andSelectName:@"tabbar_more_selected" andTitle:@"关于我们" andIndex:3];
     NTButton * button = _tabBarView.subviews[0];
     [self changeViewController:button];
-
 }
 
 #pragma mark 创建一个按钮
@@ -88,57 +106,68 @@
     [customButton setImage:[UIImage imageNamed:normal] forState:UIControlStateNormal];
     [customButton setImage:[UIImage imageNamed:selected] forState:UIControlStateDisabled];
     [customButton setTitle:title forState:UIControlStateNormal];
-    
     [customButton addTarget:self action:@selector(changeViewController:) forControlEvents:UIControlEventTouchDown];
-    
     customButton.imageView.contentMode = UIViewContentModeCenter;
     customButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     customButton.titleLabel.font = [UIFont systemFontOfSize:12];
-   
     [_tabBarView addSubview:customButton];
-
 }
 
 #pragma mark 按钮被点击时调用
 - (void)changeViewController:(NTButton *)sender
  {
-        self.selectedIndex = sender.tag; //切换不同控制器的界面
-  
-        sender.enabled = NO;
-   
-        if (_previousBtn != sender) {
-       
-                 _previousBtn.enabled = YES;
-       
-             }
-     
-         _previousBtn = sender;
-     
-     self.selectedViewController = self.viewControllers[sender.tag];
+    sender.enabled = NO;
+    if (_previousBtn != sender) {
+        _previousBtn.enabled = YES;
+    }
+    _previousBtn = sender;
+    self.selectedViewController = self.viewControllers[sender.tag];
 }
 
 #pragma mark 是否隐藏tabBar
 
--(void)isHiddenCustomTabBarByBoolean:(BOOL)boolean{
-    
-    _tabBarView.hidden=boolean;
-}
-
-- (void)didReceiveMemoryWarning
+- (void)hidesTabBar:(BOOL)yesOrNO animated:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.tabBarHidden = yesOrNO;
+    if (yesOrNO == YES)
+    {
+        if (_tabBarView.frame.origin.y == self.view.frame.size.height)
+        {
+            return;
+        }
+    }
+    else
+    {
+        if (_tabBarView.frame.origin.y == self.view.frame.size.height - kTabBarHeight)
+        {
+            return;
+        }
+    }
+    if (animated == YES)
+    {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3f];
+        if (yesOrNO == YES)
+        {
+            _tabBarView.frame = CGRectMake(_tabBarView.frame.origin.x, _tabBarView.frame.origin.y + kTabBarHeight, _tabBarView.frame.size.width, _tabBarView.frame.size.height);
+        }
+        else
+        {
+            _tabBarView.frame = CGRectMake(_tabBarView.frame.origin.x, _tabBarView.frame.origin.y - kTabBarHeight, _tabBarView.frame.size.width, _tabBarView.frame.size.height);
+        }
+        [UIView commitAnimations];
+    }
+    else
+    {
+        if (yesOrNO == YES)
+        {
+            _tabBarView.frame = CGRectMake(_tabBarView.frame.origin.x, _tabBarView.frame.origin.y + kTabBarHeight, _tabBarView.frame.size.width, _tabBarView.frame.size.height);
+        }
+        else 
+        {
+            _tabBarView.frame = CGRectMake(_tabBarView.frame.origin.x, _tabBarView.frame.origin.y - kTabBarHeight, _tabBarView.frame.size.width, _tabBarView.frame.size.height);
+        }
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

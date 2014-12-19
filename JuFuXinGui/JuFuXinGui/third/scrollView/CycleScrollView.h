@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSTimer+Addition.h"
+@interface CycleScrollView : UIView<UIScrollViewDelegate>
 
-@interface CycleScrollView : UIView
+@property (nonatomic , assign) NSInteger currentPageIndex;
+@property (nonatomic , assign) NSInteger totalPageCount;
+@property (nonatomic , strong) NSMutableArray *contentViews;
+@property (nonatomic , strong) UIScrollView *scrollView;
+@property (nonatomic , strong) UIPageControl *pageControl;
 
-@property (nonatomic , readonly) UIScrollView *scrollView;
+@property (nonatomic , strong) NSTimer *animationTimer;
+@property (nonatomic , assign) NSTimeInterval animationDuration;
+
 /**
  *  初始化
  *
