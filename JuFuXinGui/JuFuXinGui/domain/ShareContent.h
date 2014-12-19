@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ShareSDK/ShareSDK.h>
 @interface ShareContent : NSObject
 
 @property (copy, nonatomic) NSString *title;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ShareContent.h"
-#import <ShareSDK/ShareSDK.h>
+
 
 @interface ShareSDKProcessor : NSObject<ISSShareViewDelegate>
 

@@ -69,6 +69,7 @@
                                               extInfo:shareContent.content
                                              fileData:nil
                                          emoticonData:nil];
+    [publishContent addCopyUnitWithContent:shareContent.content image:shareImg];
     
     id<ISSContainer> container = [ShareSDK container];
     [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
@@ -107,14 +108,12 @@
                                 }
                                 else if (state == SSPublishContentStateFail)
                                 {
-//                                    NSLog(@"__________________分享失败");
-                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                    NSLog(@"分享失败,错误码:%ld,错误描述:%@", [error errorCode], [error errorDescription]);
                                 }
     }];
 }
 
 +(void)customShareView:(UIViewController *)viewController{
-//    NSLog(@">>> view on will display");
     [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_bar"] forBarMetrics:UIBarMetricsDefault];
     //修改左右按钮的文字颜色
     UIBarButtonItem *leftBtn = viewController.navigationItem.leftBarButtonItem;
@@ -223,10 +222,9 @@
                              result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
                                  if (state == SSPublishContentStateSuccess) {
                                      NSLog(NSLocalizedString(@"TEXT_SHARE_SUC", @"分享成功"));
-//                                     [SVProgressHUD showSuccessWithStatus:@"分享成功" duration:0.5];
                                      shareSuccessBlock();
                                  }else if (state == SSPublishContentStateFail){
-                                     NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                     NSLog(@"分享失败,错误码:%ld,错误描述:%@", [error errorCode], [error errorDescription]);
                                  
                                  }
                              }];
@@ -239,11 +237,11 @@
 }
 
 +(void) initShareSDK{
-    [ShareSDK registerApp:@"28cddc5a2c90"];
+    [ShareSDK registerApp:@"4ca37e0a4194"];
     
     //添加新浪微博应用 注册网址 http://open.weibo.com
-    [ShareSDK connectSinaWeiboWithAppKey:@"4128349648"
-                               appSecret:@"734f562feb2ff01b35aba445bb9a2457"
+    [ShareSDK connectSinaWeiboWithAppKey:@"2860426114"
+                               appSecret:@"daf0c4b56c6529c59f5fa7f81ee4a728"
                              redirectUri:@"http://www.sharesdk.cn"];
     
     //添加微信应用 注册网址 http://open.weixin.qq.com
@@ -251,6 +249,7 @@
                            wechatCls:[WXApi class]];
     
     [ShareSDK connectSMS];
+    [ShareSDK connectCopy];
     //激活SSO
     [ShareSDK ssoEnabled:YES];
 }

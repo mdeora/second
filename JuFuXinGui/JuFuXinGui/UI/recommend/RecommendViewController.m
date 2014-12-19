@@ -8,6 +8,8 @@
 
 #import "RecommendViewController.h"
 #import "NextViewController.h"
+#import "ShareSDKProcessor.h"
+#import "ShareContent.h"
 @interface RecommendViewController ()
 
 @end
@@ -43,15 +45,35 @@
     UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBtn.frame = CGRectMake(300, 20, 44, 44);
     shareBtn.backgroundColor = [UIColor purpleColor];
-    [shareBtn addTarget:self action:@selector(shareBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    [shareBtn addTarget:self action:@selector(shareBtnPress:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     shareItem.width = 100;
     self.navigationItem.rightBarButtonItem = shareItem;
 }
 
--(void)shareBtnPress{
+#pragma mark - -----------------ShareSDK实现分享功能------------------
+-(void)shareBtnPress:(id)sender{
+    ShareContent *shareContent = [self collectionShareContent];
+    ShareSDKProcessor *shareSDKProcessor = [ShareSDKProcessor new];
+    [shareSDKProcessor share:shareContent shareViewDelegate:self sender:sender shareSuccessBlock:^{
+        
+    }];
+}
 
+-(ShareContent *) collectionShareContent{
+    
+    ShareContent *shareContent = [[ShareContent alloc] initWithTitle:nil
+                                                             content:nil
+                                                    sinaWeiBoContent:nil
+                                                                 url:nil
+                                                               image:nil
+                                                            imageUrl:nil];
+    return shareContent;
+}
 
+- (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType
+{
+    [ShareSDKProcessor customShareView:viewController];
 }
 
 -(void)initBtn{

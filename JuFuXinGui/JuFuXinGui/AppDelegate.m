@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ShareSDKProcessor.h"
 @interface AppDelegate ()
 
 @end
@@ -14,12 +15,35 @@
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    [ShareSDKProcessor initShareSDK];
+    
+
     self.window.backgroundColor = [UIColor whiteColor];
     self.viewController = [[NTViewController alloc]init];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
+#pragma mark -----链接跳转回调
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    //    NSLog(@"链接调到app啦。。。。。。。openURL:%@" , sourceApplication);
+        [ShareSDK handleOpenURL:url
+              sourceApplication:sourceApplication
+                     annotation:annotation
+                     wxDelegate:self];
+        return YES;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
