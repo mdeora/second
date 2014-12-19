@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutUsViewController : UIViewController
+@interface AboutUsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end

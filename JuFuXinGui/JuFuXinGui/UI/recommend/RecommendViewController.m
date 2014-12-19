@@ -45,6 +45,7 @@
     UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBtn.frame = CGRectMake(300, 20, 44, 44);
     shareBtn.backgroundColor = [UIColor purpleColor];
+    [shareBtn setTitle:@"分享" forState:UIControlStateNormal];
     [shareBtn addTarget:self action:@selector(shareBtnPress:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     shareItem.width = 100;
@@ -90,14 +91,14 @@
     NSMutableArray *viewsArray = [@[] mutableCopy];
     NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
     for (int i = 0; i < 5; ++i) {
-        UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
+        UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, VIEW_WEIGHT, 150)];
         tempLabel.text = @"春运票荒！！！";
         tempLabel.textAlignment = NSTextAlignmentCenter;
         tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
         [viewsArray addObject:tempLabel];
     }
     
-    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 64, 320, 150) animationDuration:2];
+    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 64, VIEW_WEIGHT, 150) animationDuration:2];
     self.mainScorllView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0];
     self.mainScorllView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
         return viewsArray[pageIndex];

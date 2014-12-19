@@ -54,8 +54,9 @@
         // Initialization code
         
         self.autoresizesSubviews = YES;
-        self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WEIGHT, 150)];
         self.scrollView.autoresizingMask = 0xFF;
+        self.scrollView.backgroundColor = [UIColor purpleColor];
         self.scrollView.contentMode = UIViewContentModeCenter;
         self.scrollView.contentSize = CGSizeMake(3 * CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame));
         self.scrollView.delegate = self;
@@ -65,7 +66,7 @@
         self.scrollView.showsHorizontalScrollIndicator = NO;
         
         self.pageControl = [[UIPageControl alloc] init];
-        self.pageControl.frame = CGRectMake(0,100, 320, 50);
+        self.pageControl.frame = CGRectMake(0,100, VIEW_WEIGHT, 50);
         self.pageControl.backgroundColor = [UIColor clearColor];
         self.pageControl.numberOfPages = 5;
         

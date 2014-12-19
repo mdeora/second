@@ -47,7 +47,7 @@
     self.tabBar.hidden = YES;
     CGFloat tabBarViewY = self.view.frame.size.height - 49;
     
-    _tabBarView = [[UIImageView alloc]initWithFrame:CGRectMake(0, tabBarViewY, 320, 49)];
+    _tabBarView = [[UIImageView alloc]initWithFrame:CGRectMake(0, tabBarViewY, VIEW_WEIGHT, 49)];
     _tabBarView.userInteractionEnabled = YES;
     //    _tabBarView.image = [UIImage imageNamed:@"title_background.png"];
     _tabBarView.backgroundColor = [UIColor lightGrayColor];
@@ -84,7 +84,7 @@
     CGFloat buttonW = _tabBarView.frame.size.width / 4;
     CGFloat buttonH = _tabBarView.frame.size.height;
     
-    customButton.frame = CGRectMake(80 * index, 0, buttonW, buttonH);
+    customButton.frame = CGRectMake(buttonW * index, 0, buttonW, buttonH);
     [customButton setImage:[UIImage imageNamed:normal] forState:UIControlStateNormal];
     [customButton setImage:[UIImage imageNamed:selected] forState:UIControlStateDisabled];
     [customButton setTitle:title forState:UIControlStateNormal];

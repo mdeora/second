@@ -18,4 +18,6 @@
     #import <QuartzCore/QuartzCore.h>
     #import <ShareSDK/ShareSDK.h>
 
+    #import "Macro.h"
+
 #endif
