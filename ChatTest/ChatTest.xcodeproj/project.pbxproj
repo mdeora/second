@@ -284,6 +284,7 @@
 		A83D638A1A23307A00B923FE /* tabbarSelectBg.png in Resources */ = {isa = PBXBuildFile; fileRef = A83D63111A23307A00B923FE /* tabbarSelectBg.png */; };
 		A83D638B1A23307A00B923FE /* tabbarSelectBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A83D63121A23307A00B923FE /* tabbarSelectBg@2x.png */; };
 		A83D638D1A2331A000B923FE /* bei_ying.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A83D638C1A2331A000B923FE /* bei_ying.jpeg */; };
+		A84B1D0D1A47FB8D0069646A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84B1D0C1A47FB8D0069646A /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -735,6 +736,7 @@
 		A83D63111A23307A00B923FE /* tabbarSelectBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbarSelectBg.png; sourceTree = "<group>"; };
 		A83D63121A23307A00B923FE /* tabbarSelectBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbarSelectBg@2x.png"; sourceTree = "<group>"; };
 		A83D638C1A2331A000B923FE /* bei_ying.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bei_ying.jpeg; sourceTree = "<group>"; };
+		A84B1D0C1A47FB8D0069646A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -751,6 +753,7 @@
 				A83D5FA41A2313C200B923FE /* CoreData.framework in Frameworks */,
 				A83D5FA11A2310E700B923FE /* MobileCoreServices.framework in Frameworks */,
 				A83D5F9F1A2310D500B923FE /* libresolv.dylib in Frameworks */,
+				A84B1D0D1A47FB8D0069646A /* SDWebImage.framework in Frameworks */,
 				A83D5F9D1A2310BD00B923FE /* libstdc++.dylib in Frameworks */,
 				A83D600B1A231B9700B923FE /* libEaseMobClientSDKLite.a in Frameworks */,
 				A83D5F9B1A2310AA00B923FE /* libiconv.dylib in Frameworks */,
@@ -856,6 +859,7 @@
 		A83D5FA71A2318E800B923FE /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				A84B1D0C1A47FB8D0069646A /* SDWebImage.framework */,
 				A83D628C1A232BCE00B923FE /* MapKit.framework */,
 				A83D60C41A231E0E00B923FE /* SystemConfiguration.framework */,
 				A83D60C21A231DF300B923FE /* Social.framework */,
@@ -2234,10 +2238,12 @@
 					"$(PROJECT_DIR)/ChatTest/EaseMobSDK/third",
 					"$(PROJECT_DIR)/ChatTest",
 					"$(PROJECT_DIR)/ChatTest/utils/3rdparty",
+					"$(PROJECT_DIR)",
 				);
-				GCC_PREFIX_HEADER = "ChatTest/ChatTest-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ChatTest/ChatTest-Prefix.pch";
 				INFOPLIST_FILE = ChatTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2259,10 +2265,12 @@
 					"$(PROJECT_DIR)/ChatTest/EaseMobSDK/third",
 					"$(PROJECT_DIR)/ChatTest",
 					"$(PROJECT_DIR)/ChatTest/utils/3rdparty",
+					"$(PROJECT_DIR)",
 				);
-				GCC_PREFIX_HEADER = "ChatTest/ChatTest-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ChatTest/ChatTest-Prefix.pch";
 				INFOPLIST_FILE = ChatTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2328,6 +2336,7 @@
 				A83D5CD21A2308D600B923FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A83D5CD31A2308D600B923FE /* Build configuration list for PBXNativeTarget "ChatTestTests" */ = {
 			isa = XCConfigurationList;
@@ -2336,6 +2345,7 @@
 				A83D5CD51A2308D600B923FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
