@@ -25,9 +25,7 @@
 
     CGFloat imageW = contentRect.size.width;
     CGFloat imageH = contentRect.size.height * 0.6;
-    
     return CGRectMake(0, 5, imageW, imageH);
-
 }
 
 #pragma mark 设置button内部的title的范围
@@ -36,9 +34,7 @@
     CGFloat titleY = contentRect.size.height * 0.6;
     CGFloat titleW = contentRect.size.width;
     CGFloat titleH = contentRect.size.height - titleY;
-    
     return CGRectMake(0, titleY, titleW, titleH);
-
 }
 
 /*

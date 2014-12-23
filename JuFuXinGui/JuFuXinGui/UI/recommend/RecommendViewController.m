@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.view.backgroundColor = [UIColor redColor];
+        self.view.backgroundColor = [UIColor whiteColor];
         self.title = @"推荐项目";
         // Custom initialization
     }
@@ -33,10 +33,61 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIButton * button = [[UIButton alloc]initWithFrame:self.view.frame];
+    [self initBtn];
+    [self initShareBtn];
+    [self initScrollView];
+}
+
+-(void)initShareBtn{
+    
+    UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    shareBtn.frame = CGRectMake(300, 20, 44, 44);
+    shareBtn.backgroundColor = [UIColor purpleColor];
+    [shareBtn addTarget:self action:@selector(shareBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    shareItem.width = 100;
+    self.navigationItem.rightBarButtonItem = shareItem;
+}
+
+-(void)shareBtnPress{
+
+
+}
+
+-(void)initBtn{
+
+    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(50, 300, 50, 50)];
     [button setTitle:@"点击" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor purpleColor];
     [button addTarget:self action:@selector(goOtherView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+}
+
+//初始化自动轮播视图
+-(void)initScrollView{
+    NSMutableArray *viewsArray = [@[] mutableCopy];
+    NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
+    for (int i = 0; i < 5; ++i) {
+        UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
+        tempLabel.text = @"春运票荒！！！";
+        tempLabel.textAlignment = NSTextAlignmentCenter;
+        tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
+        [viewsArray addObject:tempLabel];
+    }
+    
+    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 64, 320, 150) animationDuration:2];
+    self.mainScorllView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0];
+    self.mainScorllView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
+        return viewsArray[pageIndex];
+    };
+    self.mainScorllView.totalPagesCount = ^NSInteger(void){
+        return 5;
+    };
+    self.mainScorllView.TapActionBlock = ^(NSInteger pageIndex){
+        NSLog(@"点击了第%ld个",pageIndex);
+    };
+    [self.view addSubview:self.mainScorllView];
+
 }
 
 #pragma mark 点击按钮进入其他界面

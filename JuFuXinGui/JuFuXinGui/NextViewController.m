@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // 设定位置和大小
+    CGRect frame = CGRectMake(0,80,[UIScreen mainScreen].bounds.size.width,320);
+    // 读取gif图片数据
+    NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"play" ofType:@"gif"]];
+    // view生成
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
+    webView.userInteractionEnabled = NO;//用户不可交互
+    webView.backgroundColor = [UIColor clearColor];
+    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+    [self.view addSubview:webView];
 }
 
 - (void)didReceiveMemoryWarning {
