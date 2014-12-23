@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NSTimer+Addition.h"
 @interface NTViewController : UITabBarController
+@property (nonatomic , strong) NSTimer *animationTimer;
+@property (nonatomic, assign) BOOL tabBarHidden;
 
--(void)isHiddenCustomTabBarByBoolean:(BOOL)boolean;
-
+- (void)hidesTabBar:(BOOL)yesOrNO animated:(BOOL)animated;
++(NTViewController *)sharedController;
 @end

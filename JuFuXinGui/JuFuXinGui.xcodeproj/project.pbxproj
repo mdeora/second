@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8166F0C1A43C77800A34A5B /* InvestmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8166F0A1A43C77800A34A5B /* InvestmentCell.m */; };
+		A8166F0D1A43C77800A34A5B /* InvestmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8166F0B1A43C77800A34A5B /* InvestmentCell.xib */; };
+		A8166F131A43D88F00A34A5B /* AboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8166F111A43D88F00A34A5B /* AboutUsCell.m */; };
+		A8166F141A43D88F00A34A5B /* AboutUsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8166F121A43D88F00A34A5B /* AboutUsCell.xib */; };
+		A8166F171A44002800A34A5B /* InvestDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8166F161A44002800A34A5B /* InvestDetailController.m */; };
 		A82CA55B1A4137720083884B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA55A1A4137720083884B /* main.m */; };
 		A82CA55E1A4137720083884B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA55D1A4137720083884B /* AppDelegate.m */; };
 		A82CA5641A4137720083884B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5621A4137720083884B /* Main.storyboard */; };
@@ -84,6 +89,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8166F091A43C77800A34A5B /* InvestmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvestmentCell.h; path = UI/Investment/InvestmentCell.h; sourceTree = "<group>"; };
+		A8166F0A1A43C77800A34A5B /* InvestmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvestmentCell.m; path = UI/Investment/InvestmentCell.m; sourceTree = "<group>"; };
+		A8166F0B1A43C77800A34A5B /* InvestmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InvestmentCell.xib; path = UI/Investment/InvestmentCell.xib; sourceTree = "<group>"; };
+		A8166F0F1A43CB2400A34A5B /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		A8166F101A43D88F00A34A5B /* AboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsCell.h; path = UI/aboutUs/AboutUsCell.h; sourceTree = "<group>"; };
+		A8166F111A43D88F00A34A5B /* AboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsCell.m; path = UI/aboutUs/AboutUsCell.m; sourceTree = "<group>"; };
+		A8166F121A43D88F00A34A5B /* AboutUsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutUsCell.xib; path = UI/aboutUs/AboutUsCell.xib; sourceTree = "<group>"; };
+		A8166F151A44002800A34A5B /* InvestDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvestDetailController.h; path = UI/Investment/InvestDetailController.h; sourceTree = "<group>"; };
+		A8166F161A44002800A34A5B /* InvestDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvestDetailController.m; path = UI/Investment/InvestDetailController.m; sourceTree = "<group>"; };
 		A82CA5551A4137720083884B /* JuFuXinGui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JuFuXinGui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82CA5591A4137720083884B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A82CA55A1A4137720083884B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -352,8 +366,13 @@
 		A82CA5BE1A415E7C0083884B /* Investment */ = {
 			isa = PBXGroup;
 			children = (
-				A82CA5C41A415F920083884B /* InvestmentViewController.m */,
 				A82CA5C51A415F920083884B /* InvestmentViewController.h */,
+				A82CA5C41A415F920083884B /* InvestmentViewController.m */,
+				A8166F091A43C77800A34A5B /* InvestmentCell.h */,
+				A8166F0A1A43C77800A34A5B /* InvestmentCell.m */,
+				A8166F0B1A43C77800A34A5B /* InvestmentCell.xib */,
+				A8166F151A44002800A34A5B /* InvestDetailController.h */,
+				A8166F161A44002800A34A5B /* InvestDetailController.m */,
 			);
 			name = Investment;
 			sourceTree = "<group>";
@@ -374,6 +393,9 @@
 				A82CA5CC1A415FA60083884B /* AboutUsViewController.xib */,
 				A82CA5CD1A415FA60083884B /* AboutUsViewController.m */,
 				A82CA5CE1A415FA60083884B /* AboutUsViewController.h */,
+				A8166F101A43D88F00A34A5B /* AboutUsCell.h */,
+				A8166F111A43D88F00A34A5B /* AboutUsCell.m */,
+				A8166F121A43D88F00A34A5B /* AboutUsCell.xib */,
 			);
 			name = aboutUs;
 			sourceTree = "<group>";
@@ -401,6 +423,7 @@
 		A8F3F7451A42CE8A00BDD1C4 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				A8166F0F1A43CB2400A34A5B /* Macro.h */,
 				A8F3F7461A42CE8A00BDD1C4 /* ShareContent.h */,
 				A8F3F7471A42CE8A00BDD1C4 /* ShareContent.m */,
 			);
@@ -585,6 +608,7 @@
 				A8F3F7821A42D25900BDD1C4 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				A82CA5641A4137720083884B /* Main.storyboard in Resources */,
 				A82CA5EA1A416B850083884B /* tabbar_info.png in Resources */,
+				A8166F0D1A43C77800A34A5B /* InvestmentCell.xib in Resources */,
 				A82CA5CA1A415F9B0083884B /* UserCenterController.xib in Resources */,
 				A82CA5E91A416B850083884B /* tabbar_more_selected.png in Resources */,
 				A82CA5E81A416B850083884B /* tabbar_more.png in Resources */,
@@ -592,6 +616,7 @@
 				A8F3F77D1A42D25900BDD1C4 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
 				A8F3F7731A42D25900BDD1C4 /* Resource.bundle in Resources */,
 				A82CA5661A4137720083884B /* Images.xcassets in Resources */,
+				A8166F141A43D88F00A34A5B /* AboutUsCell.xib in Resources */,
 				A8F3F7791A42D25900BDD1C4 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				A82CA5D51A4163280083884B /* NextViewController.xib in Resources */,
 			);
@@ -611,8 +636,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8166F131A43D88F00A34A5B /* AboutUsCell.m in Sources */,
 				A8460C4C1A42A51E00530050 /* CycleScrollView.m in Sources */,
 				A82CA5D01A415FA60083884B /* AboutUsViewController.m in Sources */,
+				A8166F171A44002800A34A5B /* InvestDetailController.m in Sources */,
 				A82CA5C61A415F920083884B /* InvestmentViewController.m in Sources */,
 				A82CA5D41A4163280083884B /* NextViewController.m in Sources */,
 				A82CA5DB1A4169C50083884B /* NTButton.m in Sources */,
@@ -623,6 +650,7 @@
 				A82CA5CB1A415F9B0083884B /* UserCenterController.m in Sources */,
 				A82CA5C31A415F760083884B /* RecommendViewController.m in Sources */,
 				A82CA5F01A416C6B0083884B /* NTViewController.m in Sources */,
+				A8166F0C1A43C77800A34A5B /* InvestmentCell.m in Sources */,
 				A82CA55B1A4137720083884B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,8 +725,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/JuFuXinGui/JuFuXinGui-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -739,8 +767,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/JuFuXinGui/JuFuXinGui-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

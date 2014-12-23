@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InvestmentViewController : UIViewController
+@interface InvestmentViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) UITableView *tableView;
 @end

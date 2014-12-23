@@ -8,6 +8,8 @@
 
 #import "RecommendViewController.h"
 #import "NextViewController.h"
+#import "ShareSDKProcessor.h"
+#import "ShareContent.h"
 @interface RecommendViewController ()
 
 @end
@@ -27,7 +29,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.delegate isHiddenCustomTabBarByBoolean:NO];
+    [self.mainScorllView.animationTimer resumeTimer];
+    [[NTViewController sharedController] hidesTabBar:NO animated:NO];
 }
 
 - (void)viewDidLoad
@@ -44,14 +47,35 @@
     shareBtn.frame = CGRectMake(300, 20, 44, 44);
     shareBtn.backgroundColor = [UIColor purpleColor];
     [shareBtn addTarget:self action:@selector(shareBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    [shareBtn setTitle:@"分享" forState:UIControlStateNormal];
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     shareItem.width = 100;
     self.navigationItem.rightBarButtonItem = shareItem;
 }
 
--(void)shareBtnPress{
+#pragma mark - -----------------ShareSDK实现分享功能------------------
+-(void)shareBtnPress:(id)sender{
+    ShareContent *shareContent = [self collectionShareContent];
+    ShareSDKProcessor *shareSDKProcessor = [ShareSDKProcessor new];
+    [shareSDKProcessor share:shareContent shareViewDelegate:self sender:sender shareSuccessBlock:^{
+        
+    }];
+}
 
+-(ShareContent *) collectionShareContent{
+    
+    ShareContent *shareContent = [[ShareContent alloc] initWithTitle:nil
+                                                             content:nil
+                                                    sinaWeiBoContent:nil
+                                                                 url:nil
+                                                               image:nil
+                                                            imageUrl:nil];
+    return shareContent;
+}
 
+- (void)viewOnWillDisplay:(UIViewController *)viewController shareType:(ShareType)shareType
+{
+    [ShareSDKProcessor customShareView:viewController];
 }
 
 -(void)initBtn{
@@ -69,13 +93,13 @@
     NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
     for (int i = 0; i < 5; ++i) {
         UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
+        UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, VIEW_WEIGHT, 150)];
         tempLabel.text = @"春运票荒！！！";
         tempLabel.textAlignment = NSTextAlignmentCenter;
         tempLabel.backgroundColor = [(UIColor *)[colorArray objectAtIndex:i] colorWithAlphaComponent:0.5];
         [viewsArray addObject:tempLabel];
     }
-    
-    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 64, 320, 150) animationDuration:2];
+    self.mainScorllView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 64, VIEW_WEIGHT, 150) animationDuration:2];
     self.mainScorllView.backgroundColor = [[UIColor purpleColor] colorWithAlphaComponent:0];
     self.mainScorllView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex){
         return viewsArray[pageIndex];
@@ -95,8 +119,12 @@
 - (void)goOtherView:(UIButton *)sender{
     
     NextViewController * fifth = [[NextViewController alloc]init];
-    [self.delegate isHiddenCustomTabBarByBoolean:YES];
     [self.navigationController pushViewController:fifth animated:YES];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.mainScorllView.animationTimer pauseTimer];
 }
 
 - (void)didReceiveMemoryWarning

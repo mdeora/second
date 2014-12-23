@@ -12,6 +12,8 @@
 	<dict>
 		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
 		<string>https://192.168.1.175/svn/jiaoshou2</string>
+		<key>AD6B3A627ECC706CC271F65C82CFFEA96F70944E</key>
+		<string>github.com:xubojoy/second.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>TeachThin.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
 		<string>../..</string>
+		<key>AD6B3A627ECC706CC271F65C82CFFEA96F70944E</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
@@ -26,6 +30,14 @@
 	<string>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AD6B3A627ECC706CC271F65C82CFFEA96F70944E</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>

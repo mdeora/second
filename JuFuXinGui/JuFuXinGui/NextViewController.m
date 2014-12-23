@@ -14,6 +14,12 @@
 
 @implementation NextViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NTViewController sharedController] hidesTabBar:YES animated:YES];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 设定位置和大小
