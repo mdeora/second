@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-<<<<<<< HEAD
-
-@interface CycleScrollView : UIView
-
-@property (nonatomic , readonly) UIScrollView *scrollView;
-=======
 #import "NSTimer+Addition.h"
+
 @interface CycleScrollView : UIView<UIScrollViewDelegate>
 
 @property (nonatomic , assign) NSInteger currentPageIndex;
@@ -25,7 +20,6 @@
 @property (nonatomic , strong) NSTimer *animationTimer;
 @property (nonatomic , assign) NSTimeInterval animationDuration;
 
->>>>>>> 4b83cea78f217faa6da38ccde81864c406c38ac8
 /**
  *  初始化
  *

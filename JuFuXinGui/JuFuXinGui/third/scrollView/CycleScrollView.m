@@ -7,24 +7,8 @@
 //
 
 #import "CycleScrollView.h"
-<<<<<<< HEAD
-#import "NSTimer+Addition.h"
 
-@interface CycleScrollView () <UIScrollViewDelegate>
-
-@property (nonatomic , assign) NSInteger currentPageIndex;
-@property (nonatomic , assign) NSInteger totalPageCount;
-@property (nonatomic , strong) NSMutableArray *contentViews;
-@property (nonatomic , strong) UIScrollView *scrollView;
-@property (nonatomic , strong) UIPageControl *pageControl;
-
-@property (nonatomic , strong) NSTimer *animationTimer;
-@property (nonatomic , assign) NSTimeInterval animationDuration;
-=======
-
-
-@interface CycleScrollView () 
->>>>>>> 4b83cea78f217faa6da38ccde81864c406c38ac8
+@interface CycleScrollView ()
 
 @end
 
@@ -60,14 +44,9 @@
         // Initialization code
         
         self.autoresizesSubviews = YES;
-<<<<<<< HEAD
-        self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-        self.scrollView.autoresizingMask = 0xFF;
-=======
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WEIGHT, 150)];
         self.scrollView.autoresizingMask = 0xFF;
         self.scrollView.backgroundColor = [UIColor purpleColor];
->>>>>>> 4b83cea78f217faa6da38ccde81864c406c38ac8
         self.scrollView.contentMode = UIViewContentModeCenter;
         self.scrollView.contentSize = CGSizeMake(3 * CGRectGetWidth(self.scrollView.frame), CGRectGetHeight(self.scrollView.frame));
         self.scrollView.delegate = self;
@@ -77,11 +56,7 @@
         self.scrollView.showsHorizontalScrollIndicator = NO;
         
         self.pageControl = [[UIPageControl alloc] init];
-<<<<<<< HEAD
-        self.pageControl.frame = CGRectMake(0,100, 320, 50);
-=======
         self.pageControl.frame = CGRectMake(0,100, VIEW_WEIGHT, 50);
->>>>>>> 4b83cea78f217faa6da38ccde81864c406c38ac8
         self.pageControl.backgroundColor = [UIColor clearColor];
         self.pageControl.numberOfPages = 5;
         

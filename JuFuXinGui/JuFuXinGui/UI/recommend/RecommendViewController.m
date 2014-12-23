@@ -46,7 +46,7 @@
     UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     shareBtn.frame = CGRectMake(300, 20, 44, 44);
     shareBtn.backgroundColor = [UIColor purpleColor];
-    [shareBtn addTarget:self action:@selector(shareBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    [shareBtn addTarget:self action:@selector(shareBtnPress:) forControlEvents:UIControlEventTouchUpInside];
     [shareBtn setTitle:@"分享" forState:UIControlStateNormal];
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     shareItem.width = 100;
@@ -92,7 +92,6 @@
     NSMutableArray *viewsArray = [@[] mutableCopy];
     NSArray *colorArray = @[[UIColor cyanColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor purpleColor]];
     for (int i = 0; i < 5; ++i) {
-        UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
         UILabel *tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, VIEW_WEIGHT, 150)];
         tempLabel.text = @"春运票荒！！！";
         tempLabel.textAlignment = NSTextAlignmentCenter;
