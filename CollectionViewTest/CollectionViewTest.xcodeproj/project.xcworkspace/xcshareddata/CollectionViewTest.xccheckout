@@ -5,29 +5,27 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>31FDB560-3EA6-4BF0-9516-01F45DBA4908</string>
+	<string>6E3B89E0-86D4-4C39-AD86-046CF813082D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TeachThin</string>
+	<string>CollectionViewTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
-		<string>https://192.168.1.175/svn/jiaoshou2</string>
 		<key>AD6B3A627ECC706CC271F65C82CFFEA96F70944E</key>
 		<string>github.com:xubojoy/second.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TeachThin.xcodeproj</string>
+	<string>CollectionViewTest/CollectionViewTest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</key>
-		<string>../..</string>
 		<key>AD6B3A627ECC706CC271F65C82CFFEA96F70944E</key>
 		<string>../../..</string>
 	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:xubojoy/second.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</string>
+	<string>AD6B3A627ECC706CC271F65C82CFFEA96F70944E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -36,15 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>AD6B3A627ECC706CC271F65C82CFFEA96F70944E</string>
 			<key>IDESourceControlWCCName</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1f4a984c-bbe9-6244-a649-6c7d12a64a7a</string>
-			<key>IDESourceControlWCCName</key>
-			<string>jiaoshou2</string>
+			<string>second</string>
 		</dict>
 	</array>
 </dict>

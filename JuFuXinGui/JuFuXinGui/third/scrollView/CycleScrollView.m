@@ -8,8 +8,7 @@
 
 #import "CycleScrollView.h"
 
-
-@interface CycleScrollView () 
+@interface CycleScrollView ()
 
 @end
 

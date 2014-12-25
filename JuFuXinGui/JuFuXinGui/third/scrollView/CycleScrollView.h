@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NSTimer+Addition.h"
+
 @interface CycleScrollView : UIView<UIScrollViewDelegate>
 
 @property (nonatomic , assign) NSInteger currentPageIndex;

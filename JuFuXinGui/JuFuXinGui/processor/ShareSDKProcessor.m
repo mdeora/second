@@ -114,6 +114,7 @@
 }
 
 +(void)customShareView:(UIViewController *)viewController{
+//    NSLog(@">>> view on will display");
     [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_bar"] forBarMetrics:UIBarMetricsDefault];
     //修改左右按钮的文字颜色
     UIBarButtonItem *leftBtn = viewController.navigationItem.leftBarButtonItem;
@@ -225,7 +226,7 @@
                                      shareSuccessBlock();
                                  }else if (state == SSPublishContentStateFail){
                                      NSLog(@"分享失败,错误码:%ld,错误描述:%@", [error errorCode], [error errorDescription]);
-                                 
+                                     shareSuccessBlock();
                                  }
                              }];
 }
