@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NTViewController.h"
 #import "CycleScrollView.h"
-@interface RecommendViewController : UIViewController
+@interface RecomIndexViewController : UIViewController
 @property (nonatomic ,weak) NTViewController * delegate;
 @property (nonatomic , retain) CycleScrollView *mainScorllView;
 @end

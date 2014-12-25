@@ -21,14 +21,14 @@
 		A82CA58E1A4138580083884B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82CA58D1A4138580083884B /* Foundation.framework */; };
 		A82CA5901A4138660083884B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82CA58F1A4138660083884B /* CoreGraphics.framework */; };
 		A82CA5921A41386C0083884B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82CA5911A41386C0083884B /* UIKit.framework */; };
-		A82CA5C31A415F760083884B /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5C11A415F760083884B /* RecommendViewController.m */; };
+		A82CA5C31A415F760083884B /* RecomIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5C11A415F760083884B /* RecomIndexViewController.m */; };
 		A82CA5C61A415F920083884B /* InvestmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5C41A415F920083884B /* InvestmentViewController.m */; };
 		A82CA5CA1A415F9B0083884B /* UserCenterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5C71A415F9B0083884B /* UserCenterController.xib */; };
 		A82CA5CB1A415F9B0083884B /* UserCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5C81A415F9B0083884B /* UserCenterController.m */; };
 		A82CA5CF1A415FA60083884B /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5CC1A415FA60083884B /* AboutUsViewController.xib */; };
 		A82CA5D01A415FA60083884B /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5CD1A415FA60083884B /* AboutUsViewController.m */; };
-		A82CA5D41A4163280083884B /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5D21A4163280083884B /* NextViewController.m */; };
-		A82CA5D51A4163280083884B /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5D31A4163280083884B /* NextViewController.xib */; };
+		A82CA5D41A4163280083884B /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5D21A4163280083884B /* RecommendViewController.m */; };
+		A82CA5D51A4163280083884B /* RecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5D31A4163280083884B /* RecommendViewController.xib */; };
 		A82CA5DB1A4169C50083884B /* NTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A82CA5D91A4169C50083884B /* NTButton.m */; };
 		A82CA5E51A416B850083884B /* title_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5DC1A416B850083884B /* title_background.png */; };
 		A82CA5E61A416B850083884B /* tabbar_product.png in Resources */ = {isa = PBXBuildFile; fileRef = A82CA5DD1A416B850083884B /* tabbar_product.png */; };
@@ -113,8 +113,8 @@
 		A82CA58F1A4138660083884B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A82CA5911A41386C0083884B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A82CA5AE1A4151C10083884B /* JuFuXinGui-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JuFuXinGui-Prefix.pch"; sourceTree = "<group>"; };
-		A82CA5C11A415F760083884B /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommendViewController.m; path = UI/recommend/RecommendViewController.m; sourceTree = "<group>"; };
-		A82CA5C21A415F760083884B /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendViewController.h; path = UI/recommend/RecommendViewController.h; sourceTree = "<group>"; };
+		A82CA5C11A415F760083884B /* RecomIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecomIndexViewController.m; path = UI/recommend/RecomIndexViewController.m; sourceTree = "<group>"; };
+		A82CA5C21A415F760083884B /* RecomIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecomIndexViewController.h; path = UI/recommend/RecomIndexViewController.h; sourceTree = "<group>"; };
 		A82CA5C41A415F920083884B /* InvestmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvestmentViewController.m; path = UI/Investment/InvestmentViewController.m; sourceTree = "<group>"; };
 		A82CA5C51A415F920083884B /* InvestmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvestmentViewController.h; path = UI/Investment/InvestmentViewController.h; sourceTree = "<group>"; };
 		A82CA5C71A415F9B0083884B /* UserCenterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCenterController.xib; path = UI/userCenter/UserCenterController.xib; sourceTree = "<group>"; };
@@ -123,9 +123,9 @@
 		A82CA5CC1A415FA60083884B /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutUsViewController.xib; path = UI/aboutUs/AboutUsViewController.xib; sourceTree = "<group>"; };
 		A82CA5CD1A415FA60083884B /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsViewController.m; path = UI/aboutUs/AboutUsViewController.m; sourceTree = "<group>"; };
 		A82CA5CE1A415FA60083884B /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsViewController.h; path = UI/aboutUs/AboutUsViewController.h; sourceTree = "<group>"; };
-		A82CA5D11A4163280083884B /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
-		A82CA5D21A4163280083884B /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
-		A82CA5D31A4163280083884B /* NextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextViewController.xib; sourceTree = "<group>"; };
+		A82CA5D11A4163280083884B /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		A82CA5D21A4163280083884B /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		A82CA5D31A4163280083884B /* RecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendViewController.xib; sourceTree = "<group>"; };
 		A82CA5D91A4169C50083884B /* NTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTButton.m; sourceTree = "<group>"; };
 		A82CA5DA1A4169C50083884B /* NTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTButton.h; sourceTree = "<group>"; };
 		A82CA5DC1A416B850083884B /* title_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_background.png; sourceTree = "<group>"; };
@@ -354,11 +354,11 @@
 		A82CA5BD1A415E690083884B /* recommend */ = {
 			isa = PBXGroup;
 			children = (
-				A82CA5C11A415F760083884B /* RecommendViewController.m */,
-				A82CA5C21A415F760083884B /* RecommendViewController.h */,
-				A82CA5D11A4163280083884B /* NextViewController.h */,
-				A82CA5D21A4163280083884B /* NextViewController.m */,
-				A82CA5D31A4163280083884B /* NextViewController.xib */,
+				A82CA5C11A415F760083884B /* RecomIndexViewController.m */,
+				A82CA5C21A415F760083884B /* RecomIndexViewController.h */,
+				A82CA5D11A4163280083884B /* RecommendViewController.h */,
+				A82CA5D21A4163280083884B /* RecommendViewController.m */,
+				A82CA5D31A4163280083884B /* RecommendViewController.xib */,
 			);
 			name = recommend;
 			sourceTree = "<group>";
@@ -618,7 +618,7 @@
 				A82CA5661A4137720083884B /* Images.xcassets in Resources */,
 				A8166F141A43D88F00A34A5B /* AboutUsCell.xib in Resources */,
 				A8F3F7791A42D25900BDD1C4 /* ShareSDKFlatShareViewUI.bundle in Resources */,
-				A82CA5D51A4163280083884B /* NextViewController.xib in Resources */,
+				A82CA5D51A4163280083884B /* RecommendViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,14 +641,14 @@
 				A82CA5D01A415FA60083884B /* AboutUsViewController.m in Sources */,
 				A8166F171A44002800A34A5B /* InvestDetailController.m in Sources */,
 				A82CA5C61A415F920083884B /* InvestmentViewController.m in Sources */,
-				A82CA5D41A4163280083884B /* NextViewController.m in Sources */,
+				A82CA5D41A4163280083884B /* RecommendViewController.m in Sources */,
 				A82CA5DB1A4169C50083884B /* NTButton.m in Sources */,
 				A8460C4D1A42A51E00530050 /* NSTimer+Addition.m in Sources */,
 				A82CA55E1A4137720083884B /* AppDelegate.m in Sources */,
 				A8F3F6F21A42C69600BDD1C4 /* ShareSDKProcessor.m in Sources */,
 				A8F3F7481A42CE8A00BDD1C4 /* ShareContent.m in Sources */,
 				A82CA5CB1A415F9B0083884B /* UserCenterController.m in Sources */,
-				A82CA5C31A415F760083884B /* RecommendViewController.m in Sources */,
+				A82CA5C31A415F760083884B /* RecomIndexViewController.m in Sources */,
 				A82CA5F01A416C6B0083884B /* NTViewController.m in Sources */,
 				A8166F0C1A43C77800A34A5B /* InvestmentCell.m in Sources */,
 				A82CA55B1A4137720083884B /* main.m in Sources */,

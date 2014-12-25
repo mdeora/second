@@ -8,7 +8,7 @@
 
 #import "NTViewController.h"
 #import "NTButton.h"
-#import "RecommendViewController.h"
+#import "RecomIndexViewController.h"
 #import "InvestmentViewController.h"
 #import "UserCenterController.h"
 #import "AboutUsViewController.h"
@@ -73,7 +73,7 @@ static NTViewController *controller = nil;
     _tabBarView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:_tabBarView];
     
-    RecommendViewController * first = [[RecommendViewController alloc]init];
+    RecomIndexViewController * first = [[RecomIndexViewController alloc]init];
     UINavigationController * navi1 = [[UINavigationController alloc]initWithRootViewController:first];
     InvestmentViewController * second = [[InvestmentViewController alloc]init];
     UINavigationController * navi2 = [[UINavigationController alloc]initWithRootViewController:second];
@@ -84,10 +84,10 @@ static NTViewController *controller = nil;
     
     self.viewControllers = [NSArray arrayWithObjects:navi1,navi2,navi3,navi4, nil];
     
-    [self creatButtonWithNormalName:@"tabbar_client.png" andSelectName:@"tabbar_client_selected.png" andTitle:@"推荐项目" andIndex:0];
-    [self creatButtonWithNormalName:@"tabbar_product" andSelectName:@"tabbar_product_selected" andTitle:@"投资项目" andIndex:1];
-    [self creatButtonWithNormalName:@"tabbar_info" andSelectName:@"tabbar_info_selected" andTitle:@"个人中心" andIndex:2];
-    [self creatButtonWithNormalName:@"tabbar_more" andSelectName:@"tabbar_more_selected" andTitle:@"关于我们" andIndex:3];
+    [self creatButtonWithNormalName:@"tabbar_client.png" andSelectName:@"tabbar_client_selected.png" andTitle:@"推荐" andIndex:0];
+    [self creatButtonWithNormalName:@"tabbar_product" andSelectName:@"tabbar_product_selected" andTitle:@"投资" andIndex:1];
+    [self creatButtonWithNormalName:@"tabbar_info" andSelectName:@"tabbar_info_selected" andTitle:@"个人" andIndex:2];
+    [self creatButtonWithNormalName:@"tabbar_more" andSelectName:@"tabbar_more_selected" andTitle:@"关于" andIndex:3];
     NTButton * button = _tabBarView.subviews[0];
     [self changeViewController:button];
 }
@@ -159,6 +159,8 @@ static NTViewController *controller = nil;
     }
     else
     {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3f];
         if (yesOrNO == YES)
         {
             _tabBarView.frame = CGRectMake(_tabBarView.frame.origin.x, _tabBarView.frame.origin.y + kTabBarHeight, _tabBarView.frame.size.width, _tabBarView.frame.size.height);
@@ -167,6 +169,7 @@ static NTViewController *controller = nil;
         {
             _tabBarView.frame = CGRectMake(_tabBarView.frame.origin.x, _tabBarView.frame.origin.y - kTabBarHeight, _tabBarView.frame.size.width, _tabBarView.frame.size.height);
         }
+        [UIView commitAnimations];
     }
 }
 
