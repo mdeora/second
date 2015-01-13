@@ -6,15 +6,15 @@
 //  Copyright (c) 2013年 Kohn. All rights reserved.
 //
 
+#import "RecomIndexViewController.h"
 #import "RecommendViewController.h"
-#import "NextViewController.h"
 #import "ShareSDKProcessor.h"
 #import "ShareContent.h"
-@interface RecommendViewController ()
+@interface RecomIndexViewController ()
 
 @end
 
-@implementation RecommendViewController
+@implementation RecomIndexViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -117,7 +117,7 @@
 
 - (void)goOtherView:(UIButton *)sender{
     
-    NextViewController * fifth = [[NextViewController alloc]init];
+    RecommendViewController * fifth = [[RecommendViewController alloc]init];
     [self.navigationController pushViewController:fifth animated:YES];
 }
 
